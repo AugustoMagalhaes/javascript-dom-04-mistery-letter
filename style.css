@@ -6,3 +6,33 @@
   position: absolute;
   z-index: -1;
 }
+
+main {
+  margin: 5px;
+}
+
+#input-div {
+  font-size: 20px;
+  padding-top: 20px;
+  padding-left: 0px;
+  text-align: center;
+}
+
+#carta-texto {
+  width: 600px;
+  height: 20px;  
+}
+
+#criar-carta {
+  border: 0px solid;
+  border-radius: 20px;
+  height: 30px;
+  width: 90px;
+  background-color: #0951bd;
+  color: #ffffff;
+}
+
+#carta-gerada {
+  padding-top: 20px;
+  text-align: center;
+}
