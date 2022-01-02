@@ -1,0 +1,8 @@
+#box {
+  margin: -7.8px;
+  width: 1366px;
+  height: 768px;
+  border: 1px solid red;
+  position: absolute;
+  z-index: -1;
+}
