@@ -7,10 +7,18 @@ const generateLetterBtn = document.getElementById('criar-carta');
 function displayLetter() {
   const inputPhrase = inputField.value;
   const inputWords = inputPhrase.split(' ');
-
+  console.log(inputWords);
+  misteryLetter.innerText = '';
+  
   for (let index = 0; index < inputWords.length; index += 1) {
     const word = document.createElement('span');
-    word.innerHTML = (index !== inputWords.length - 1) ? inputWords[index].concat(' ') : inputWords[index];
+    // Requisito 5: Caso o campo seja vazio ou somente com espaços vazios, deve ser gerada a frase abaixo:
+    if (inputPhrase.trim().length === 0) {
+      word.innerText = 'Por favor, digite o conteúdo da carta.';
+      misteryLetter.appendChild(word);
+      return;
+    }
+    word.innerText = inputWords[index];
     misteryLetter.appendChild(word);
   }
 }
