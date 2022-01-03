@@ -78,3 +78,8 @@ main {
   font-size: 40px;
   padding: 15px;
 }
+
+/* Requisito 12: Cria a classe rotateleft */
+.rotateleft {
+  transform: rotate(-5deg);
+}
