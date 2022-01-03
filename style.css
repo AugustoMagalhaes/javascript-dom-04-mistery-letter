@@ -60,3 +60,9 @@ main {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 900;
 }
+
+/* Requisito 9: Cria a classe medium */
+.medium {
+  font-size: 20px;
+  padding: 8px;
+}
