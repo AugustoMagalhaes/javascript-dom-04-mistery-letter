@@ -83,3 +83,8 @@ main {
 .rotateleft {
   transform: rotate(-5deg);
 }
+
+/* Requisito 13: Cria a classe rotateright */
+.rotateright {
+  transform: rotate(5deg);
+}
