@@ -66,3 +66,9 @@ main {
   font-size: 20px;
   padding: 8px;
 }
+
+/* Requisito 10: Cria a classe big */
+.big {
+  font-size: 30px;
+  padding: 10px;
+}
