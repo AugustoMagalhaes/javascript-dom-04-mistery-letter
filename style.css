@@ -88,3 +88,14 @@ main {
 .rotateright {
   transform: rotate(5deg);
 }
+
+/* Requisito 14: Cria a classe skewleft */
+.skewleft {
+  transform: skewX(10deg);
+}
+
+/* Requisito 15: Cria a classe skewright */
+.skewright {
+  transform: skewX(-10deg);
+}
+
