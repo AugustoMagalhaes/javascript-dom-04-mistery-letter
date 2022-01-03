@@ -43,3 +43,12 @@ main {
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
 }
+
+/* Requisito 7: Cria a classe magazine1 */
+.magazine1 {
+  background-color: teal;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+}
