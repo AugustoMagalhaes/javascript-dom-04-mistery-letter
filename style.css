@@ -72,3 +72,9 @@ main {
   font-size: 30px;
   padding: 10px;
 }
+
+/* Requisito 11: Cria a classe reallybig */
+.reallybig {
+  font-size: 40px;
+  padding: 15px;
+}
