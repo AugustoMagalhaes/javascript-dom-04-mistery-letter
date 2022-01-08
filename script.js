@@ -33,6 +33,9 @@ function checkClasslist(spanElement) {
 // Requisito 17 (incompleto) - Ao clicar numa palavra, modifica o estilo da palavra.
 function changeClass(event) {
   const spanWord = event.target;
+  for (let wordClass of spanWord.classList) {
+    spanWord.classList.remove(wordClass);
+  }
   addClass(spanWord);
 }
 
@@ -40,7 +43,7 @@ function changeClass(event) {
 function countWords() {
   const spanList = misteryLetter.getElementsByTagName('span');
   const wordCount = spanList.length;
-  countLetter.innerText = `Quantidade de palavras: ${wordCount}`;
+  countLetter.innerText = wordCount;
 }
 
 // Requisito 3 e 4 - Criação dinâmica da carta após clique no botão 'criar-carta' sem alteração posterior do conteúdo do 'input':
