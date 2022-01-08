@@ -99,3 +99,7 @@ main {
   transform: skewX(-10deg);
 }
 
+#carta-contador {
+  font-size: 20px;
+  text-align: center;
+}
