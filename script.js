@@ -2,53 +2,41 @@ const inputField = document.getElementById('carta-texto');
 const misteryLetter = document.getElementById('carta-gerada');
 const generateLetterBtn = document.getElementById('criar-carta');
 const countLetter = document.getElementById('carta-contador');
-const stylesGroup = ['newspaper', 'magazine1', 'magazine2'];
-const sizesGroup = ['medium', 'big', 'reallybig'];
-const rotationGroup = ['rotateleft', 'rotateright'];
-const skewsGroup = ['skewleft', 'skewsright'];
+const classObject = {
+  style: ['newspaper', 'magazine1', 'magazine2'],
+  size: ['medium', 'big', 'reallybig'],
+  rotation: ['rotateleft', 'rotateright'],
+  skew: ['skewleft', 'skewsright'],
+};
 
 // Requisito 16 (incompleto): Adicionando classes de forma aleatória na carta.
-function randomClass(classArray) {
-  /* const randInt = Math.floor(Math.random() * (classArray.length + 1) - 1);
-  return classArray[randInt]; */
-  const randInt = Math.floor(Math.random() * classArray.length);
-  return classArray[randInt];
+function randomClass() {
+  let classesList = [];
+  for (let prop in classObject) {
+    const randInt = Math.floor(Math.random() * classObject[prop].length);
+    const element = classObject[prop][randInt];
+    classesList.push(element);
+  };
+  const classes = classesList.join(' ');
+  return classes;
 }
 
 function addClass(spanElement) {
-  /* spanElement.classList.toggle(randomClass(stylesGroup));
-  spanElement.classList.toggle(randomClass(sizesGroup));
-  spanElement.classList.toggle(randomClass(rotationGroup));
-  spanElement.classList.toggle(randomClass(skewsGroup));
-  checkClasslist(spanElement); */
   if (spanElement.classList.length > 0) {
     for (let singleClass of spanElement.classList) {
       spanElement.classList.remove(singleClass);
     }
   }
-  spanElement.setAttribute('class', `${randomClass(stylesGroup)} ${randomClass(sizesGroup)} ${randomClass(rotationGroup)} ${randomClass(skewsGroup)}`);
-  /* spanElement.setAttribute('class', randomClass(sizesGroup));
-  spanElement.setAttribute('class', randomClass(rotationGroup));
-  spanElement.setAttribute('class', randomClass(skewsGroup)); */
+  spanElement.setAttribute('class', randomClass());
 }
 
-function checkClasslist(spanElement) {
-  while (spanElement.classList.contains(undefined)) {
-    spanElement.classList.remove(undefined);
-  }
-  while (spanElement.classList.length < 2) {
-    addClass(spanElement);
-  }
-}
-
-// Requisito 17 (incompleto) - Ao clicar numa palavra, modifica o estilo da palavra.
+// Requisito 17 - Ao clicar numa palavra, modifica o estilo da palavra.
 function changeClass(event) {
   const spanWord = event.target;
   for (let wordClass of spanWord.classList) {
     spanWord.classList.remove(wordClass);
   }
-  spanWord.setAttribute('class', `${randomClass(stylesGroup)} ${randomClass(sizesGroup)} ${randomClass(rotationGroup)} ${randomClass(skewsGroup)}`);
-  /* addClass(spanWord); */
+  spanWord.setAttribute('class', randomClass());
 }
 
 // Requisito 18 - contador de palavras
