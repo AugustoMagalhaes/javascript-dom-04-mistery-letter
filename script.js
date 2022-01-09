@@ -9,16 +9,27 @@ const skewsGroup = ['skewleft', 'skewsright'];
 
 // Requisito 16 (incompleto): Adicionando classes de forma aleatória na carta.
 function randomClass(classArray) {
-  const randInt = Math.floor(Math.random() * (classArray.length + 1) - 1);
+  /* const randInt = Math.floor(Math.random() * (classArray.length + 1) - 1);
+  return classArray[randInt]; */
+  const randInt = Math.floor(Math.random() * classArray.length);
   return classArray[randInt];
 }
 
 function addClass(spanElement) {
-  spanElement.classList.toggle(randomClass(stylesGroup));
+  /* spanElement.classList.toggle(randomClass(stylesGroup));
   spanElement.classList.toggle(randomClass(sizesGroup));
   spanElement.classList.toggle(randomClass(rotationGroup));
   spanElement.classList.toggle(randomClass(skewsGroup));
-  checkClasslist(spanElement);
+  checkClasslist(spanElement); */
+  if (spanElement.classList.length > 0) {
+    for (let singleClass of spanElement.classList) {
+      spanElement.classList.remove(singleClass);
+    }
+  }
+  spanElement.setAttribute('class', `${randomClass(stylesGroup)} ${randomClass(sizesGroup)} ${randomClass(rotationGroup)} ${randomClass(skewsGroup)}`);
+  /* spanElement.setAttribute('class', randomClass(sizesGroup));
+  spanElement.setAttribute('class', randomClass(rotationGroup));
+  spanElement.setAttribute('class', randomClass(skewsGroup)); */
 }
 
 function checkClasslist(spanElement) {
@@ -36,7 +47,8 @@ function changeClass(event) {
   for (let wordClass of spanWord.classList) {
     spanWord.classList.remove(wordClass);
   }
-  addClass(spanWord);
+  spanWord.setAttribute('class', `${randomClass(stylesGroup)} ${randomClass(sizesGroup)} ${randomClass(rotationGroup)} ${randomClass(skewsGroup)}`);
+  /* addClass(spanWord); */
 }
 
 // Requisito 18 - contador de palavras
