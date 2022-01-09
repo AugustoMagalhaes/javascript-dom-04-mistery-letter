@@ -23,9 +23,12 @@ main {
   color: #ffffff;
 }
 
-#carta-gerada {  
-  padding-top: 20px;
-  text-align: center;
+#carta-gerada {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  padding-top: 20px;  
 }
 
 /* Requisito 6: Crie a classe newspaper */

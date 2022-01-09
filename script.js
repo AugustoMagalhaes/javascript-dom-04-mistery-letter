@@ -11,19 +11,19 @@ const classObject = {
 
 // Requisito 16 (incompleto): Adicionando classes de forma aleatória na carta.
 function randomClass() {
-  let classesList = [];
-  for (let prop in classObject) {
+  const classesList = [];
+  for (const prop in classObject) {
     const randInt = Math.floor(Math.random() * classObject[prop].length);
     const element = classObject[prop][randInt];
     classesList.push(element);
-  };
+  }
   const classes = classesList.join(' ');
   return classes;
 }
 
 function addClass(spanElement) {
   if (spanElement.classList.length > 0) {
-    for (let singleClass of spanElement.classList) {
+    for (const singleClass of spanElement.classList) {
       spanElement.classList.remove(singleClass);
     }
   }
@@ -33,7 +33,7 @@ function addClass(spanElement) {
 // Requisito 17 - Ao clicar numa palavra, modifica o estilo da palavra.
 function changeClass(event) {
   const spanWord = event.target;
-  for (let wordClass of spanWord.classList) {
+  for (const wordClass of spanWord.classList) {
     spanWord.classList.remove(wordClass);
   }
   spanWord.setAttribute('class', randomClass());
