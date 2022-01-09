@@ -31,6 +31,10 @@ main {
   padding-top: 20px;  
 }
 
+#carta-gerada span {
+  margin-right: 10px;
+}
+
 /* Requisito 6: Crie a classe newspaper */
 .newspaper {
   background-color: antiquewhite;
