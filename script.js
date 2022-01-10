@@ -6,10 +6,10 @@ const classObject = {
   style: ['newspaper', 'magazine1', 'magazine2'],
   size: ['medium', 'big', 'reallybig'],
   rotation: ['rotateleft', 'rotateright'],
-  skew: ['skewleft', 'skewsright'],
+  skew: ['skewleft', 'skewright'],
 };
 
-// Requisito 16 (incompleto): Adicionando classes de forma aleatória na carta.
+// Requisito 16 - Adicionando classes de forma aleatória na carta.
 function randomClass() {
   const classesList = [];
   for (const prop in classObject) {
